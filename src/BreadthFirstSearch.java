@@ -20,3 +20,17 @@ public class BreadthFirstSearch {
             }
         }
     }
+    public boolean hasPathTo(Vertex v) {
+        return visited.contains(v);
+    }
+
+    public List<Vertex> pathTo(Vertex v) {
+        if (!hasPathTo(v)) return null;
+        List<Vertex> path = new ArrayList<>();
+        for (Vertex x = v; x != null; x = edgeTo.get(x)) {
+            path.add(x);
+        }
+        Collections.reverse(path);
+        return path;
+    }
+}
