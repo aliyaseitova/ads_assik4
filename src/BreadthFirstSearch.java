@@ -8,3 +8,15 @@ public class BreadthFirstSearch {
         Queue<Vertex> queue = new LinkedList<>();
         visited.add(start);
         queue.add(start);
+        while (!queue.isEmpty()) {
+            Vertex v = queue.poll();
+            for (WeightedGraph.Edge edge : graph.getEdges(v)) {
+                Vertex w = edge.getDestination();
+                if (!visited.contains(w)) {
+                    visited.add(w);
+                    edgeTo.put(w, v);
+                    queue.add(w);
+                }
+            }
+        }
+    }
