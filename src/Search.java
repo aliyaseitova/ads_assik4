@@ -8,3 +8,7 @@ public Search(Vertex source) {
     this.marked = new HashSet<>();
     this.edgeTo = new HashMap<>();
 }
+public boolean hasPathTo(Vertex v) {
+    return marked.contains(v);
+}
+
