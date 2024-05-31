@@ -1,4 +1,6 @@
-public class Search {
+import java.util.*;
+
+public abstract class Search {
     protected Set<Vertex> marked;
     protected Map<Vertex, Vertex> edgeTo;
     protected final Vertex source;
