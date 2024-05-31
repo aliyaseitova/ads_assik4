@@ -3,3 +3,8 @@ public class Search {
     protected Map<Vertex, Vertex> edgeTo;
     protected final Vertex source;
 }
+public Search(Vertex source) {
+    this.source = source;
+    this.marked = new HashSet<>();
+    this.edgeTo = new HashMap<>();
+}
