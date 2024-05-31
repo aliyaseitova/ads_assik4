@@ -11,4 +11,9 @@ public Search(Vertex source) {
 public boolean hasPathTo(Vertex v) {
     return marked.contains(v);
 }
-
+public List<Vertex> pathTo(Vertex v) {
+    if (!hasPathTo(v)) return null;
+    List<Vertex> path = new ArrayList<>();
+    for (Vertex x = v; x != null; x = edgeTo.get(x)) {
+        path.add(x);
+    }
