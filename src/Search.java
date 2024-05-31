@@ -17,3 +17,9 @@ public List<Vertex> pathTo(Vertex v) {
     for (Vertex x = v; x != null; x = edgeTo.get(x)) {
         path.add(x);
     }
+    Collections.reverse(path);
+    return path;
+}
+
+public abstract void search(WeightedGraph graph);
+}
